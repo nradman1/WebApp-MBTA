@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+<style>
+    body {
+        background-color: lightblue;
+        text-align: left;
+      }
+    h1 {
+        color: navy;
+        font-weight: bold
+      }
+    h2 {
+        color: navy;
+        font-weight: bold
+    }
+    bold {
+        font-weight: bold;
+        color: white
+      }
+    italic {
+        font-style: italic
+    }
+</style>
+</head>
+<body>
+    <h1>Result</h1>
+    <p><bold>The Nearest Station to {{ place_name }} is: </bold> {{ station }}</p>
+    <p><bold>The station's Wheelchair Accessiblity is:</bold> {{ accessibility }}</p>
+    <p><bold>The temperature outside where you are is:</bold> {{ temp }} celcius</p>
+    <p><bold>The arrival time of the next train is: </bold> {{ time }} minutes</p>
+
+    <h2>Events Nearby:</h2>
+        <p><italic>Events within a 15 mile radius from {{ place_name }} !</italic></p>
+    <ul>
+        {% for event in events %}
+            <li>{{ event }}</li>
+        {% endfor %}
+</body>
+</html>
